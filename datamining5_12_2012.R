@@ -1,0 +1,21 @@
+library ("plyr")
+library ("ggplot2")
+library ("reshape")
+library ("xtable")
+library("XML")
+library("arules")
+library("arulesViz")
+dd <- read.csv("~/Desktop/BDD_caro/mobspp.csv", sep=";")
+str(dd)
+summary(dd)
+
+sa<-table(dd)
+plot(sa)
+barplot(sa)
+
+dm<-apriori(dd)
+str(dm)
+plot(dm, method="graph")
+
+chisq.test(dd$materiau,dd$IDchronodebut)
+chisq.test(ma)
